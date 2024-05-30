@@ -6,6 +6,9 @@ class_name Player extends RigidBody3D
 
 var is_transitioning: bool = false
 
+@onready var explotion_audio: AudioStreamPlayer = $ExplotionAudio
+@onready var success_audio: AudioStreamPlayer = $SuccessAudio
+
 func _process(delta: float) -> void:
 	if Input.is_action_pressed("boost"):
 		apply_central_force(basis.y * delta * thrust)
@@ -26,17 +29,19 @@ func _on_body_entered(body: Node) -> void:
 
 func crash_sequence() -> void:
 	print("KABOOM!")
+	explotion_audio.play()
 	set_process(false)
 	is_transitioning = true
 	var tween: Tween = create_tween()
-	tween.tween_interval(1.0)
+	tween.tween_interval(2.5)
 	tween.tween_callback(get_tree().reload_current_scene)
 
 func complete_level(next_level_file: String) -> void:
 	print("Level Complete")
+	success_audio.play()
 	set_process(false)
 	is_transitioning = true
 	var tween: Tween = create_tween()
-	tween.tween_interval(1.0)
+	tween.tween_interval(1.5)
 	tween.tween_callback(
 			get_tree().change_scene_to_file.bind(next_level_file))

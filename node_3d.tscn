@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://kh6af7l5fvvr"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_oqaok"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_orxjd"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.41421, 1, 1, 0, 1.41421, -1.41421, -1.41421, 1, 1, -2, 1, -2)
+mesh = SubResource("BoxMesh_oqaok")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 2, 0, 0)
+mesh = SubResource("SphereMesh_orxjd")

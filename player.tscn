@@ -15,7 +15,6 @@ contact_monitor = true
 linear_damp = 1.0
 angular_damp = 3.0
 script = ExtResource("1_byuou")
-torque_thrust = 200.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("CylinderMesh_mqvpn")

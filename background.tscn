@@ -1,0 +1,90 @@
+[gd_scene load_steps=2 format=3 uid="uid://buu0mmhnw82yu"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_denjo"]
+albedo_color = Color(0.4, 0.269333, 0.176, 1)
+
+[node name="Floor" type="CSGBox3D" groups=["Hazard"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0)
+use_collision = true
+size = Vector3(30, 8, 5)
+material = SubResource("StandardMaterial3D_denjo")
+
+[node name="Wall" type="CSGBox3D" parent="."]
+transform = Transform3D(0.970792, -0.239923, 0, 0.239923, 0.970792, 0, 0, 0, 1, -11.9944, 5.86964, 0)
+size = Vector3(4, 10, 4)
+material = SubResource("StandardMaterial3D_denjo")
+
+[node name="Wall2" type="CSGBox3D" parent="."]
+transform = Transform3D(0.855915, 0.517116, 0, -0.517116, 0.855915, 0, 0, 0, 1, -11.9944, 12.5142, 0)
+size = Vector3(4, 10, 4)
+material = SubResource("StandardMaterial3D_denjo")
+
+[node name="Wall3" type="CSGBox3D" parent="."]
+transform = Transform3D(0.975527, 0.21988, 0, -0.21988, 0.975527, 0, 0, 0, 1, 12.5883, 7.12999, 0)
+size = Vector3(4, 10, 4)
+material = SubResource("StandardMaterial3D_denjo")
+
+[node name="Wall4" type="CSGBox3D" parent="."]
+transform = Transform3D(0.863052, -0.505115, 0, 0.505115, 0.863052, 0, 0, 0, 1, 13.2056, 13.6802, 0)
+size = Vector3(4, 10, 4)
+material = SubResource("StandardMaterial3D_denjo")
+
+[node name="Celling" type="CSGBox3D" parent="."]
+transform = Transform3D(-0.255463, 0.966819, 0, -0.966819, -0.255463, 0, 0, 0, 1, -8.14285, 16.7661, 0)
+size = Vector3(4, 10, 4)
+material = SubResource("StandardMaterial3D_denjo")
+
+[node name="Celling2" type="CSGBox3D" parent="."]
+transform = Transform3D(-0.255463, 0.966819, 0, -0.966819, -0.255463, 0, 0, 0, 1, 1.05611, 15.8201, 0)
+size = Vector3(4, 10, 4)
+material = SubResource("StandardMaterial3D_denjo")
+
+[node name="Celling3" type="CSGBox3D" parent="."]
+transform = Transform3D(0.274765, 0.961511, 0, -0.961511, 0.274765, 0, 0, 0, 1, 8.57677, 17.2204, 0)
+size = Vector3(4, 10, 4)
+material = SubResource("StandardMaterial3D_denjo")
+
+[node name="BackgroundRock" type="CSGBox3D" parent="."]
+transform = Transform3D(0.930385, -0.363065, -0.050671, 0.366376, 0.925586, 0.0951781, 0.0123446, -0.107117, 0.99417, -8.33894, 5.86964, -5.20888)
+size = Vector3(4, 10, 4)
+material = SubResource("StandardMaterial3D_denjo")
+
+[node name="BackgroundRock2" type="CSGBox3D" parent="."]
+transform = Transform3D(0.677672, -0.730189, -0.0870889, 0.735261, 0.674796, 0.0635762, 0.0123446, -0.107117, 0.99417, 3.55089, 3.5776, -9.32537)
+size = Vector3(4, 10, 4)
+material = SubResource("StandardMaterial3D_denjo")
+
+[node name="BackgroundRock4" type="CSGBox3D" parent="."]
+transform = Transform3D(0.364736, -0.11442, -0.924054, 0.492523, 0.865922, 0.0871831, 0.790183, -0.486916, 0.372187, 7.95462, 16.2552, -5.20888)
+size = Vector3(3, 10, 3)
+material = SubResource("StandardMaterial3D_denjo")
+
+[node name="BackgroundRock5" type="CSGBox3D" parent="."]
+transform = Transform3D(0.449155, 0.0469117, -0.892221, 0.416977, 0.872188, 0.25577, 0.790183, -0.486916, 0.372187, 3.06017, 17.0894, -5.20888)
+size = Vector3(3, 10, 3)
+material = SubResource("StandardMaterial3D_denjo")
+
+[node name="BackgroundRock6" type="CSGBox3D" parent="."]
+transform = Transform3D(0.586296, 0.42368, -0.690473, 0.178515, 0.763812, 0.620262, 0.790183, -0.486916, 0.372187, -6.28172, 16.2552, -5.20888)
+size = Vector3(3, 10, 3)
+material = SubResource("StandardMaterial3D_denjo")
+
+[node name="BackgroundRock9" type="CSGBox3D" parent="."]
+transform = Transform3D(0.586296, 0.42368, -0.690473, 0.178515, 0.763812, 0.620262, 0.790183, -0.486916, 0.372187, -2.76994, 16.2552, -6.76914)
+size = Vector3(3, 10, 3)
+material = SubResource("StandardMaterial3D_denjo")
+
+[node name="BackgroundRock7" type="CSGBox3D" parent="."]
+transform = Transform3D(0.209791, -0.355699, -0.91075, 0.22617, 0.923871, -0.308724, 0.951228, -0.141217, 0.274269, -4.6232, 3.30917, -5.20888)
+size = Vector3(3, 10, 3)
+material = SubResource("StandardMaterial3D_denjo")
+
+[node name="BackgroundRock8" type="CSGBox3D" parent="."]
+transform = Transform3D(0.209791, -0.355699, -0.91075, 0.22617, 0.923871, -0.308724, 0.951228, -0.141217, 0.274269, -1.6652, 3.30917, -6.25839)
+size = Vector3(3, 10, 3)
+material = SubResource("StandardMaterial3D_denjo")
+
+[node name="BackgroundRock3" type="CSGBox3D" parent="."]
+transform = Transform3D(0.903932, -0.423876, -0.0568946, 0.427499, 0.899364, 0.0915938, 0.0123446, -0.107117, 0.99417, 8.72402, 4.06533, -5.20888)
+size = Vector3(4, 10, 4)
+material = SubResource("StandardMaterial3D_denjo")

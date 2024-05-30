@@ -1,7 +1,22 @@
-[gd_scene load_steps=2 format=3 uid="uid://buu0mmhnw82yu"]
+[gd_scene load_steps=5 format=3 uid="uid://buu0mmhnw82yu"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_denjo"]
 albedo_color = Color(0.4, 0.269333, 0.176, 1)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7s104"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_wa8vc"]
+sky_material = SubResource("ProceduralSkyMaterial_7s104")
+
+[sub_resource type="Environment" id="Environment_863ya"]
+background_mode = 1
+background_color = Color(0.07, 0.04648, 0.0308, 1)
+sky = SubResource("Sky_wa8vc")
+ambient_light_source = 3
+tonemap_mode = 2
+glow_enabled = true
 
 [node name="Floor" type="CSGBox3D" groups=["Hazard"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0)
@@ -88,3 +103,26 @@ material = SubResource("StandardMaterial3D_denjo")
 transform = Transform3D(0.903932, -0.423876, -0.0568946, 0.427499, 0.899364, 0.0915938, 0.0123446, -0.107117, 0.99417, 8.72402, 4.06533, -5.20888)
 size = Vector3(4, 10, 4)
 material = SubResource("StandardMaterial3D_denjo")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.984808, -0.111619, 0.133022, 0, 0.766044, 0.642788, -0.173648, -0.633022, 0.754407, 0, 0, 0)
+light_energy = 0.5
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_863ya")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9, -5.72999)
+omni_range = 12.0
+omni_attenuation = 0.5
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.60146, 9, -3.82032)
+omni_range = 12.0
+omni_attenuation = 0.5
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.97845, 9, -3.82032)
+omni_range = 12.0
+omni_attenuation = 0.5

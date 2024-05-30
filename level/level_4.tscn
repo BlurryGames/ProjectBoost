@@ -1,22 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://cfc3g2a0r4d1c"]
+[gd_scene load_steps=7 format=3 uid="uid://cfc3g2a0r4d1c"]
 
 [ext_resource type="Script" path="res://level/landing_pad.gd" id="1_7mp4v"]
 [ext_resource type="PackedScene" uid="uid://dyggyqaurslmy" path="res://player.tscn" id="2_w5ixv"]
 [ext_resource type="PackedScene" uid="uid://dwqf5lho4k6p1" path="res://moving_hazard.tscn" id="3_p36a1"]
 [ext_resource type="PackedScene" uid="uid://buu0mmhnw82yu" path="res://background.tscn" id="4_quxra"]
-
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_eyw3n"]
-sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
-ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
-
-[sub_resource type="Sky" id="Sky_wa8vc"]
-sky_material = SubResource("ProceduralSkyMaterial_eyw3n")
-
-[sub_resource type="Environment" id="Environment_x6xkq"]
-background_mode = 2
-sky = SubResource("Sky_wa8vc")
-tonemap_mode = 2
-glow_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f3qcl"]
 albedo_color = Color(0.337255, 0.662745, 0.788235, 1)
@@ -25,13 +12,6 @@ albedo_color = Color(0.337255, 0.662745, 0.788235, 1)
 albedo_color = Color(0.0876, 0.73, 0.237493, 1)
 
 [node name="Level" type="Node3D"]
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_x6xkq")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
-shadow_enabled = true
 
 [node name="LaunchPad" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0.2, 0)

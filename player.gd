@@ -6,12 +6,15 @@ class_name Player extends RigidBody3D
 
 var is_transitioning: bool = false
 
-@onready var explotion_audio: AudioStreamPlayer = $ExplotionAudio
+@onready var explosion_audio: AudioStreamPlayer = $ExplosionAudio
 @onready var success_audio: AudioStreamPlayer = $SuccessAudio
 @onready var rocket_audio: AudioStreamPlayer3D = $RocketAudio
+
 @onready var booster_particles: GPUParticles3D = $BoosterParticles
 @onready var right_booster_particles: GPUParticles3D = $RightBoosterParticles
 @onready var left_booster_particles: GPUParticles3D = $LeftBoosterParticles
+@onready var explosion_particles: GPUParticles3D = $ExplosionParticles
+@onready var success_particles: GPUParticles3D = $SuccessParticles
 
 func _process(delta: float) -> void:
 	if Input.is_action_pressed("boost"):
@@ -45,7 +48,8 @@ func _on_body_entered(body: Node) -> void:
 
 func crash_sequence() -> void:
 	print("KABOOM!")
-	explotion_audio.play()
+	explosion_particles.emitting = true
+	explosion_audio.play()
 	set_process(false)
 	is_transitioning = true
 	var tween: Tween = create_tween()
@@ -54,6 +58,7 @@ func crash_sequence() -> void:
 
 func complete_level(next_level_file: String) -> void:
 	print("Level Complete")
+	success_particles.emitting = true
 	success_audio.play()
 	set_process(false)
 	is_transitioning = true

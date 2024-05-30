@@ -1,10 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://dyggyqaurslmy"]
+[gd_scene load_steps=10 format=3 uid="uid://dyggyqaurslmy"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_byuou"]
 [ext_resource type="AudioStream" uid="uid://dvlww81dyn8mn" path="res://Audio/SFX - Death Explosion.ogg" id="2_lsxlu"]
 [ext_resource type="AudioStream" uid="uid://b4c2k6hmfc6ea" path="res://Audio/SFX - Success.ogg" id="3_esojj"]
 [ext_resource type="AudioStream" uid="uid://byiveu0qpis2v" path="res://Audio/SFX - Main engine thrust.ogg" id="4_0vuwp"]
-[ext_resource type="PackedScene" uid="uid://cnp64d7o53fmj" path="res://booster_particles.tscn" id="5_7ocgm"]
+[ext_resource type="PackedScene" uid="uid://cnp64d7o53fmj" path="res://particles/booster_particles.tscn" id="5_rvi67"]
+[ext_resource type="PackedScene" uid="uid://dcecb8hw7dbrv" path="res://particles/explosion_particles.tscn" id="6_0vwnj"]
+[ext_resource type="PackedScene" uid="uid://jfwajmrh6ca7" path="res://particles/success_particles.tscn" id="7_q756u"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_mqvpn"]
 
@@ -26,7 +28,7 @@ mesh = SubResource("CylinderMesh_mqvpn")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CylinderShape3D_3qlne")
 
-[node name="ExplotionAudio" type="AudioStreamPlayer" parent="."]
+[node name="ExplosionAudio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_lsxlu")
 
 [node name="SuccessAudio" type="AudioStreamPlayer" parent="."]
@@ -35,13 +37,17 @@ stream = ExtResource("3_esojj")
 [node name="RocketAudio" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("4_0vuwp")
 
-[node name="BoosterParticles" parent="." instance=ExtResource("5_7ocgm")]
+[node name="BoosterParticles" parent="." instance=ExtResource("5_rvi67")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 
-[node name="RightBoosterParticles" parent="." instance=ExtResource("5_7ocgm")]
+[node name="RightBoosterParticles" parent="." instance=ExtResource("5_rvi67")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4, -1, 0)
 
-[node name="LeftBoosterParticles" parent="." instance=ExtResource("5_7ocgm")]
+[node name="LeftBoosterParticles" parent="." instance=ExtResource("5_rvi67")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, -1, 0)
+
+[node name="ExplosionParticles" parent="." instance=ExtResource("6_0vwnj")]
+
+[node name="SuccessParticles" parent="." instance=ExtResource("7_q756u")]
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

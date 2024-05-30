@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://k4nb18fmqc17"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_denjo"]
+albedo_color = Color(0.4, 0.269333, 0.176, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f3qcl"]
+albedo_color = Color(0.337255, 0.662745, 0.788235, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sg5nt"]
+albedo_color = Color(0.0876, 0.73, 0.237493, 1)
+
+[node name="Level" type="Node3D"]
+
+[node name="Floor" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0)
+use_collision = true
+size = Vector3(30, 8, 5)
+material = SubResource("StandardMaterial3D_denjo")
+
+[node name="LaunchPad" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0.2, 0)
+use_collision = true
+size = Vector3(2, 0.4, 2)
+material = SubResource("StandardMaterial3D_f3qcl")
+
+[node name="LandingPad" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0.2, 0)
+use_collision = true
+size = Vector3(2, 0.4, 2)
+material = SubResource("StandardMaterial3D_sg5nt")
